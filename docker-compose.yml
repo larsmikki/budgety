@@ -1,0 +1,18 @@
+version: "3"
+services:
+  budgety:
+    image: budgety:latest
+    container_name: budgety
+    ports:
+      - "3000:3000"
+    volumes:
+      - budgety-data:/app/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000/"]
+      interval: 300s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  budgety-data:

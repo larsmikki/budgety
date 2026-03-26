@@ -1,0 +1,12 @@
+# Budget data
+data/
+
+# Claude Code
+.claude/
+CLAUDE.md
+
+# Windows build scripts
+build.bat
+
+# Node
+node_modules/
